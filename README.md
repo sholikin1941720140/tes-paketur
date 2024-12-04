@@ -37,15 +37,6 @@ Welcome to the **Company Management System API**! 🚀 This system allows compan
 
 ---
 
-## **Authentication**
-
-We use **JWT (JSON Web Token)** for authentication. All API requests require a valid token which is included in the `Authorization` header as `Bearer {token}`.
-
--   **Login:**  
-    To log in and receive a token, use the `POST /api/login` endpoint. You will receive a JWT token that you will include in the headers for subsequent API requests.
-
----
-
 ## **API Documentation**
 
 The full API documentation is available at the following link:  
