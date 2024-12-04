@@ -57,7 +57,7 @@ The full API documentation is available at the following link:
 
 Here is the ERD diagram for this system:
 
-![ERD Diagram](erd.png)
+![ERD Diagram](ERD.png)
 
 ---
 
