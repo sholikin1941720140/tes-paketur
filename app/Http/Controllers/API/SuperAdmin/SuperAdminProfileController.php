@@ -1,31 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\API\Manager;
+namespace App\Http\Controllers\API\SuperAdmin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ManagerProfileController extends Controller
+class SuperAdminProfileController extends Controller
 {
     public function index()
     {
         $user = auth()->user();
+        $data = User::with('roles')->findOrFail($user->id);
 
         return response()->json([
             'status' => 'success',
-            'data' => [
-                'id' => $user->id,
-                'name' => $user->name,
-                'email' => $user->email,
-                'phone_number' => $user->phone_number,
-                'address' => $user->address,
-                'role' => $user->roles ? $user->roles->name : null,
-                'company' => [
-                    'company_name' => $user->companies->name,
-                    'company_email' => $user->companies->email,
-                    'company_phone_number' => $user->companies->phone_number,
-                ],
-            ],
+            'data' => $data
         ], 200);
     }
 
